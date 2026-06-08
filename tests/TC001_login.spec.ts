@@ -31,7 +31,7 @@ test.describe('Login Module', () =>
 
         // Verification
         await expect(page).toHaveTitle(
-            'Time Dashboard'
+            'TimesPro Dashboard'
         );
     })
 );
