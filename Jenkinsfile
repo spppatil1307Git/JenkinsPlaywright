@@ -1,11 +1,23 @@
 pipeline {
     agent any
 
+    environment {
+        JAVA_HOME = 'C:\\Program Files\\Java\\jdk-25'
+        PATH = "${JAVA_HOME}\\bin;${env.PATH}"
+    }
+
     tools {
         allure 'Allure'
     }
 
     stages {
+
+        stage('Check Java') {
+            steps {
+                bat 'echo JAVA_HOME=%JAVA_HOME%'
+                bat 'java -version'
+            }
+        }
 
         stage('Checkout') {
             steps {
